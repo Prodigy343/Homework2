@@ -12,3 +12,4 @@
   - Las distintas medidas para los valores a insertar en los TextField estan especificadas con un promp text en el TextField,
     cuando se vea 0.0 indica que el valor debe ser real.
   - Para la ejecución del .jar se necesitará de la ultima version de Java la cual puede obtenerse de el siquiente link     https://java.com/es/download/
+  - Un pequeño inconveniente con el alojo de memoria en la aplicacion impide que imagenes de gran tamaño puedan ser trabajadas, no conseguimos la instrucción para poder solicitarle memoria extra al SO.
