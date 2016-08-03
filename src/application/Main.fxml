@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="849.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <Button layoutX="484.0" layoutY="50.0" mnemonicParsing="false" onAction="#Negative" prefHeight="37.0" prefWidth="142.0" text="Negative">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Button layoutX="484.0" layoutY="139.0" mnemonicParsing="false" onAction="#ReflectionX" prefHeight="37.0" prefWidth="142.0" text="Reflextion in X">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Button layoutX="484.0" layoutY="93.0" mnemonicParsing="false" onAction="#ReflectionY" prefHeight="37.0" prefWidth="142.0" text="Reflextion in Y">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <LineChart fx:id="chartHistogram" layoutX="544.0" layoutY="243.0" prefHeight="572.0" prefWidth="753.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Label layoutX="22.0" layoutY="50.0" prefHeight="36.0" prefWidth="120.0" text="File Name:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="126.0" prefHeight="36.0" prefWidth="108.0" text="File Size:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="166.0" prefHeight="36.0" prefWidth="108.0" text="Bits p/pixel:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="484.0" layoutY="14.0" prefHeight="36.0" prefWidth="120.0" text="Operations:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="88.0" prefHeight="36.0" prefWidth="120.0" text="Dimension:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <StackPane fx:id="DnDListener" layoutX="22.0" layoutY="295.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="520.0" prefWidth="520.0">
+         <children>
+            <ImageView fx:id="img" fitHeight="520.0" fitWidth="520.0" opacity="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@default.png" />
+               </image></ImageView>
+         </children></StackPane>
+      <Label fx:id="FileName" layoutX="165.0" layoutY="50.0" prefHeight="36.0" prefWidth="151.0" />
+      <Label fx:id="Dimension" layoutX="165.0" layoutY="88.0" prefHeight="36.0" prefWidth="151.0" />
+      <Label fx:id="FileSize" layoutX="165.0" layoutY="130.0" prefHeight="36.0" prefWidth="151.0" />
+      <Label fx:id="Bpp" layoutX="165.0" layoutY="166.0" prefHeight="36.0" prefWidth="151.0" />
+      <Button layoutX="484.0" layoutY="186.0" mnemonicParsing="false" onAction="#equalization" prefHeight="37.0" prefWidth="142.0" text="Equalization">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="threshold" layoutX="670.0" layoutY="52.0" prefHeight="37.0" prefWidth="142.0" promptText="Threshold [0-255]" />
+      <Button layoutX="822.0" layoutY="52.0" mnemonicParsing="false" onAction="#Thresholding" prefHeight="37.0" prefWidth="142.0" text="Thresholding">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="contrast" layoutX="670.0" layoutY="94.0" prefHeight="37.0" prefWidth="142.0" promptText="Contrast [0.0 - ...]" />
+      <TextField fx:id="bright" layoutX="670.0" layoutY="139.0" prefHeight="37.0" prefWidth="142.0" promptText="Brightness [-128,127]" />
+      <Button layoutX="822.0" layoutY="94.0" mnemonicParsing="false" onAction="#Contrast" prefHeight="37.0" prefWidth="142.0" text="Contrast">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="822.0" layoutY="139.0" mnemonicParsing="false" onAction="#Brightness" prefHeight="37.0" prefWidth="142.0" text="Bright">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="degree" layoutX="670.0" layoutY="186.0" prefHeight="37.0" prefWidth="142.0" promptText="Degree [0 - 360]" />
+      <Button layoutX="822.0" layoutY="186.0" mnemonicParsing="false" onAction="#Rotation" prefHeight="37.0" prefWidth="142.0" text="Rotate">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="1153.0" layoutY="52.0" mnemonicParsing="false" onAction="#saveBMP" prefHeight="37.0" prefWidth="142.0" text="Save">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="outBMP" layoutX="999.0" layoutY="52.0" prefHeight="37.0" prefWidth="142.0" promptText="BMP Name" />
+      <TextField fx:id="scaleX" layoutX="999.0" layoutY="94.0" prefHeight="37.0" prefWidth="68.0" promptText="xHeight" />
+      <TextField fx:id="scaleY" layoutX="1073.0" layoutY="94.0" prefHeight="37.0" prefWidth="68.0" promptText="xWidth" />
+      <Button layoutX="1153.0" layoutY="93.0" mnemonicParsing="false" onAction="#Scale" prefHeight="37.0" prefWidth="142.0" text="Scale">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="1056.0" layoutY="144.0" prefHeight="36.0" prefWidth="142.0" text="Interpolations">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <HBox layoutX="1004.0" layoutY="178.0" prefHeight="48.0" prefWidth="298.0">
+         <children>
+            <RadioButton fx:id="Bilinear1" mnemonicParsing="false" onAction="#selectNearest" prefHeight="17.0" prefWidth="108.0" selected="true" text="Nearest">
+               <toggleGroup>
+                  <ToggleGroup fx:id="group" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="Bilinear" mnemonicParsing="false" onAction="#selectBilinear" prefHeight="17.0" prefWidth="108.0" text="Bilinear" toggleGroup="$group" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

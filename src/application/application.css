@@ -1,0 +1,108 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.radio-button{
+	-fx-font-size: 10pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-opacity: 0.8;
+}
+
+.chart-plot-background{
+	-fx-padding:0px;
+	-fx-font-family: Verdana;
+	-fx-background-color: linear-gradient(to bottom right, lightsteelblue, black);
+}
+
+.chart-content{
+	-fx-padding:30px;
+}
+
+.axis {
+    -fx-tick-label-fill: white;
+    -fx-tick-length: 20;
+    -fx-minor-tick-length: 10;
+}
+
+.chart-series-line { 
+	-fx-stroke-width: 2px;
+    -fx-effect: null;
+}
+
+.chart-legend-item-symbol{
+   -fx-background-radius: 0;
+}
+
+.chart-legend { 
+	-fx-padding: 10 10 10 120;
+	-fx-background-color: none;
+}
+
+.default-color0.chart-series-line { 
+	-fx-stroke: red;
+}
+
+.default-color1.chart-series-line { 
+	-fx-stroke: green;
+}
+
+.default-color2.chart-series-line { 
+	-fx-stroke: blue;
+}
+
+.default-color3.chart-series-line { 
+	-fx-stroke: white;
+}
+ 
+.default-color0.chart-line-symbol { 
+	-fx-background-color: red, white;
+}
+
+.default-color1.chart-line-symbol { 
+	-fx-background-color: green, white;
+}
+
+.default-color2.chart-line-symbol { 
+	-fx-background-color: blue, white;
+}
+
+.default-color3.chart-line-symbol { 
+	-fx-background-color: white, white;
+}
+
+.button {
+	-fx-font-size: 10pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-opacity: 0.8;
+    -fx-background-color:
+    linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
+    linear-gradient(#020b02, #3a3a3a),
+    linear-gradient(#9d9e9d 0%, #6b6a6b 20%, #343534 80%, #242424 100%);
+    -fx-background-insets: 0,1,4;
+    -fx-background-radius: 3,3,3;
+}
+
+.button:hover{
+	-fx-background-color:
+	linear-gradient(#9d9e9d 0%, #6b6a6b 10%, #343534 80%, #242424 100%),
+    linear-gradient(#686868 0%, #232723 55%, #373837 75%, #757575 100%);
+}
+
+.button:pressed {
+
+    -fx-background-color:
+    linear-gradient(#9d9e9d 0%, #6b6a6b 20%, #343534 80%, #242424 100%),
+    linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
+    linear-gradient(#020b02, #3a3a3a);
+}
+
+.label {
+	-fx-font-size: 15pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-opacity: 0.8;
+}
+
+.root {
+    -fx-background-image: url("back.jpg");
+    -fx-background-size: cover;  
+}
